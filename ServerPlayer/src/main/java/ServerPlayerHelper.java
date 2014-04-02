@@ -48,8 +48,6 @@ public class ServerPlayerHelper {
         ProxiedPlayer pp = serverPlayerList.next();
         ping = (new Integer(pp.getPing())).shortValue();
         
-        System.out.println(formatName(pp));
-        
         return formatName(pp);
     }
     
