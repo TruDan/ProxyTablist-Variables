@@ -27,8 +27,7 @@ public class ServerPlayerHelper {
         this.lastSlot = 0;
         try {
             serverPlayerList = player.getServer().getInfo().getPlayers().iterator();
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             serverPlayerList = null;
         }
     }
@@ -40,22 +39,22 @@ public class ServerPlayerHelper {
         if (serverPlayerList == null) {
             return "";
         }
-        
-        if(!serverPlayerList.hasNext()) {
+
+        if (!serverPlayerList.hasNext()) {
             return "";
         }
-        
+
         ProxiedPlayer pp = serverPlayerList.next();
         ping = (new Integer(pp.getPing())).shortValue();
-        
+
         return formatName(pp);
     }
-    
+
     public String formatName(ProxiedPlayer p) {
         StringBuilder name = new StringBuilder();
 
         //Check for Prefix
-        if(ProxyTablist.getInstance().getConfig().contains("variable.player.prefix." + p.getName())) {
+        if (ProxyTablist.getInstance().getConfig().contains("variable.player.prefix." + p.getName())) {
             name.append(ProxyTablist.getInstance().getConfig().getString("variable.player.prefix." + p.getName(), ""));
         }
 
@@ -67,6 +66,11 @@ public class ServerPlayerHelper {
         }
 
         name.append(p.getName());
-        return name.toString();
+        String nameStr = name.toString();
+        if (nameStr == null) {
+            return "";
+        }
+
+        return nameStr;
     }
 }
