@@ -13,6 +13,7 @@
         <module>CurrentServer</module>
         <module>CurrentServerCount</module>
         <module>ServerPlayer</module>
+        <module>NotServerPlayer</module>
     </modules>
 
     <build>
