@@ -24,7 +24,7 @@ import net.md_5.bungee.api.connection.Server;
 public class NotServerPlayer implements Variable {
 
     private HashMap<ProxiedPlayer, NotServerPlayerHelper> helpers = new HashMap<ProxiedPlayer, NotServerPlayerHelper>();
-    private static final Pattern pattern = Pattern.compile("\\{serverPlayer\\}");
+    private static final Pattern pattern = Pattern.compile("\\{notServerPlayer\\}");
 
     private int lastRefreshId = -1;
     private ProxiedPlayer lastPlayer;
